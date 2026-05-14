@@ -1,0 +1,12 @@
+1. Create your GitHub repository.
+2. Upload/extract these files.
+3. In terminal:
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin YOUR-REPO-URL
+   git push -u origin main
+
+PayPal support link included:
+https://www.paypal.com/donate/?hosted_button_id=G69AUBDK36GD8

@@ -1,0 +1,44 @@
+v2.6.4
+- Added Settings -> News Translator batch tool: Translate Missing Subtitles Only.
+- Backfills translated ReviewNews/AFT subtitles without retranslating full article bodies, excerpts, slugs, or SEO fields.
+- Processes subtitles in small AJAX batches by language and stores them in the existing subtitle column.
+- Keeps frontend behavior safe: stored translated subtitle -> original subtitle fallback -> no live frontend translation.
+
+v2.6.3
+- Fixed frontend/UI cache miss behavior that could trigger live LibreTranslate/Gunicorn calls on language view. Frontend now serves cached/manual translations only.
+
+
+= 2.6.1 =
+- Moved the homepage floating language picker from the left side to the upper-right side.
+- Reduced the picker width, padding, font size, and shadow so it is less intrusive over homepage text.
+
+* Added a fixed floating language picker for the homepage and translated homepages.
+* Restored homepage language selection without re-enabling full-page output buffering.
+* Added mobile-safe styling so the floating picker becomes a bottom pill on small screens.
+* Updated translated homepage detection to include Portuguese (/pt/).
+
+News Translator Pro Changelog
+=============================
+
+Version 2.4.7 - Force Retranslate Batch Tools
+---------------------------------------------
+- Added a new Settings -> News Translator batch section with two separate actions:
+  - Translate Missing Content
+  - Force Retranslate All Existing Articles
+- Added force-retranslate mode for published posts and pages.
+- Added per-language force retranslation support for Spanish, French, and Portuguese.
+- Added batch cursor tracking so force retranslation can process large sites safely across repeated AJAX requests.
+- Added confirmation warning before overwriting stored translated content.
+- Force retranslation now rebuilds stored translated title, content, excerpt, subtitle, slug, and Rank Math SEO fields from the current English source.
+- Preserved existing missing-only translation behavior.
+- Added database helper methods for cursor-based retranslation batches.
+- Updated LibreTranslate API URL helper text to include LAN/self-hosted endpoints.
+- Updated settings screen labels and rewrite notices to include Portuguese routes.
+
+Version 2.4.6 - Frontend Language Button Fixes
+----------------------------------------------
+- Fixed frontend language buttons so they appear correctly on English and translated article pages.
+- Fixed duplicated language switcher output on translated routes.
+- Fixed translated article routing so language buttons point to the translated article instead of reloading the homepage or English article.
+- Improved admin translation status checks so translated content is read fresh from the database.
+
