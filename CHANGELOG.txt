@@ -1,3 +1,11 @@
+v2.7.2
+- Subtitle publish hotfix for improved translation behavior during publish workflow
+- Merged private development branch with public GitHub release
+- Improved public package stability
+- Preserved PayPal support integration
+- Updated GitHub public distribution build
+- General bug fixes and workflow improvements	
+
 = 2.7.1 =
 - Adds render-time and cleanup-tool stripping for standalone Z marker lines around featured images and Gutenberg image blocks.
 - Removes single-Z and repeated-Z placeholder artifacts saved by older translation runs.

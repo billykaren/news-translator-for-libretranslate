@@ -1,10 +1,11 @@
-=== News Translator Pro ===
+=== News Translator for LibreTranslate ===
+
 Contributors: thedemocracyadvocate
-Tags: translation, libretranslate, multilingual, seo, sitemap
+Tags: translation, libretranslate, multilingual, seo, sitemap, hreflang
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 8.1
-Stable tag: 2.6.4
+Stable tag: 2.7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
