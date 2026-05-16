@@ -1,0 +1,67 @@
+= 2.7.1 =
+- Adds render-time and cleanup-tool stripping for standalone Z marker lines around featured images and Gutenberg image blocks.
+- Removes single-Z and repeated-Z placeholder artifacts saved by older translation runs.
+- Expands existing legacy token scrubber while retaining v2.6.9 hybrid publish behavior.
+
+= 2.6.9 =
+* Restored immediate auto-translation on normal draft-to-publish workflows.
+* Added hybrid publish trigger using transition_post_status plus wp_after_insert_post fallback.
+* Added delayed subtitle-only finalizer so ReviewNews/AFT subtitles are translated after post meta is saved.
+* Prevented duplicate publish translations when multiple WordPress hooks fire in the same publish request.
+
+v2.6.9 - Fixed auto-translate on publish running before subtitle meta saved; subtitles now translate and save during publish without manual backfill.
+v2.6.7
+- Deep legacy token scrubber for older translated rows that leaked mutated placeholder variants above article images or inside content.
+- Removes NTP*, TOKEN*, OKEN*, NTITECTOKEN*, NTINCULTURE, box-prefixed token lines, and token-only HTML paragraphs/divs.
+- Expands the existing Clean Existing Token Artifacts utility so archived translations can be repaired without retranslating content.
+- Keeps render-time cleanup active as a last-line defense for any remaining legacy rows.
+
+v2.6.6
+- Hotfix: strips leaked symbolic placeholder artifacts such as NTP1, NTP2, [NTP1], [NTP2], box characters, and zero-width remnants from translated subtitles and translated output.
+- Adds a Settings utility to clean existing saved token artifacts without retranslating articles.
+- Applies frontend safety cleanup so legacy rows do not display token artifacts above article content.
+
+v2.6.4
+- Added Settings -> News Translator batch tool: Translate Missing Subtitles Only.
+- Backfills translated ReviewNews/AFT subtitles without retranslating full article bodies, excerpts, slugs, or SEO fields.
+- Processes subtitles in small AJAX batches by language and stores them in the existing subtitle column.
+- Keeps frontend behavior safe: stored translated subtitle -> original subtitle fallback -> no live frontend translation.
+
+v2.6.3
+- Fixed frontend/UI cache miss behavior that could trigger live LibreTranslate/Gunicorn calls on language view. Frontend now serves cached/manual translations only.
+
+
+= 2.6.1 =
+- Moved the homepage floating language picker from the left side to the upper-right side.
+- Reduced the picker width, padding, font size, and shadow so it is less intrusive over homepage text.
+
+* Added a fixed floating language picker for the homepage and translated homepages.
+* Restored homepage language selection without re-enabling full-page output buffering.
+* Added mobile-safe styling so the floating picker becomes a bottom pill on small screens.
+* Updated translated homepage detection to include Portuguese (/pt/).
+
+News Translator Pro Changelog
+=============================
+
+Version 2.4.7 - Force Retranslate Batch Tools
+---------------------------------------------
+- Added a new Settings -> News Translator batch section with two separate actions:
+  - Translate Missing Content
+  - Force Retranslate All Existing Articles
+- Added force-retranslate mode for published posts and pages.
+- Added per-language force retranslation support for Spanish, French, and Portuguese.
+- Added batch cursor tracking so force retranslation can process large sites safely across repeated AJAX requests.
+- Added confirmation warning before overwriting stored translated content.
+- Force retranslation now rebuilds stored translated title, content, excerpt, subtitle, slug, and Rank Math SEO fields from the current English source.
+- Preserved existing missing-only translation behavior.
+- Added database helper methods for cursor-based retranslation batches.
+- Updated LibreTranslate API URL helper text to include LAN/self-hosted endpoints.
+- Updated settings screen labels and rewrite notices to include Portuguese routes.
+
+Version 2.4.6 - Frontend Language Button Fixes
+----------------------------------------------
+- Fixed frontend language buttons so they appear correctly on English and translated article pages.
+- Fixed duplicated language switcher output on translated routes.
+- Fixed translated article routing so language buttons point to the translated article instead of reloading the homepage or English article.
+- Improved admin translation status checks so translated content is read fresh from the database.
+

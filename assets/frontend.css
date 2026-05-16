@@ -1,0 +1,138 @@
+/* News Translator Pro — language switcher */
+.nt-switcher {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.nt-switcher__label {
+    font-weight: 600;
+    color: #555;
+    margin-right: 4px;
+}
+
+.nt-switcher__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.nt-switcher__link:hover {
+    background: #e8f0fe;
+    border-color: #4285f4;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.nt-switcher__link--active {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: #fff;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.nt-switcher__link--active:hover {
+    background: #1a73e8;
+    color: #fff;
+}
+
+
+.nt-translation-notice {
+    margin: 12px 0 18px;
+    padding: 10px 12px;
+    background: #fff8db;
+    border: 1px solid #eed27a;
+    border-left: 4px solid #d7a400;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5f4b00;
+}
+
+.nt-switcher--front {
+    margin: 12px auto 18px;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+/* v2.6.1: compact upper-right homepage language picker */
+.nt-switcher--floating-home {
+    position: fixed;
+    right: 0;
+    top: 18vh;
+    transform: none;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    width: 124px;
+    margin: 0;
+    padding: 8px 7px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-right: 0;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+}
+
+.nt-switcher--floating-home .nt-switcher__label {
+    display: block;
+    margin: 0 0 3px;
+    color: #222;
+    font-size: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.nt-switcher--floating-home .nt-switcher__link {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 5px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+@media (max-width: 782px) {
+    .nt-switcher--floating-home {
+        top: auto;
+        bottom: 18px;
+        right: 10px;
+        transform: none;
+        width: auto;
+        max-width: calc(100vw - 20px);
+        flex-direction: row;
+        align-items: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 999px;
+        overflow-x: auto;
+    }
+
+    .nt-switcher--floating-home .nt-switcher__label {
+        margin: 0 4px 0 0;
+        flex: 0 0 auto;
+    }
+
+    .nt-switcher--floating-home .nt-switcher__link {
+        width: auto;
+        flex: 0 0 auto;
+    }
+}
